@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class HealthKiosk{
     public static void main(String[] args) {
+        final double PHARMACYDISPENSE=250;
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to the Ashesi Health Kiosk");
         System.out.println("__________________________________");
@@ -25,6 +26,48 @@ public class HealthKiosk{
             default:
                 System.out.println("Invalid service code");
                 break; 
+        }
+        //Task 2
+        System.out.println("""
+        Please enter a health metric:
+        1.BMI
+        2.Dosage round-up
+        3.Simple Trig helper
+        """);
+        int quickMetric=input.nextInt();
+
+        switch (quickMetric) {
+            case 1:
+                System.out.println("Welcome to the BMI Metric");
+                System.out.println("-------------------------");
+                System.out.println("Enter your weight in kg:");
+                double weightKG=input.nextDouble();
+                System.out.println("Enter your height in meters:");
+                double heightM=input.nextDouble();
+
+                double bmi=weightKG/heightM;
+                double roundedBMI=Math.round(bmi*100)/100;
+                System.out.println("BMI: "+roundedBMI);
+                
+                if(roundedBMI<18.5){
+                    System.out.print("Category: Underweight");
+                }else if(roundedBMI>=18.5 && roundedBMI<=24.9){
+                    System.out.print("Category: Normal");
+                }else if(roundedBMI>=25.0 && roundedBMI<=29.9){
+                    System.out.print("Category: Overweight");
+                }else{
+                    System.out.print("Category: Obese");
+                }                
+                break;
+            case 2:
+                System.out.println("Welcome to the Dosage Round-up");
+                System.out.println("------------------------------");
+                System.out.println("Enter the required dosage in mg");
+                double dosage=input.nextDouble();
+                int numberOfTablets=(int) Math.ceil(dosage/PHARMACYDISPENSE);
+                System.out.println("Number of tablets: "+numberOfTablets);
+            default:
+                throw new AssertionError();
         }
 
         
