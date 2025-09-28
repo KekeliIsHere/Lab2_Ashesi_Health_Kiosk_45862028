@@ -66,13 +66,24 @@ public class HealthKiosk{
                 double dosage=input.nextDouble();
                 int numberOfTablets=(int) Math.ceil(dosage/PHARMACYDISPENSE);
                 System.out.println("Number of tablets: "+numberOfTablets);
+                break;
+            case 3:
+                System.out.println("Welcome to the Simple Trig helper");
+                System.out.println("---------------------------------");
+                System.out.println("Enter an angle in degrees: ");
+                double angleDegrees=input.nextDouble();
+                double angleRadians=Math.toRadians(angleDegrees);
+                double sinAngle=Math.sin(angleRadians);
+                double cosAngle=Math.cos(angleRadians);
+                System.out.println("sin angle: "+(Math.round(sinAngle * 1000) / 1000.0));
+                System.out.println("cos angle: "+(Math.round(cosAngle * 1000) / 1000.0));
+                break;
             default:
-                throw new AssertionError();
+                System.out.println("Invalid Health Metric");
+                break;
         }
-
-        
-        
-        
+        //Task 4     
+                
         input.close();
     }
 }
