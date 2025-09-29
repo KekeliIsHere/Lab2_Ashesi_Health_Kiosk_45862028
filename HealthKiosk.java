@@ -87,7 +87,7 @@ public class HealthKiosk{
         int randomNumbers=(int) (Math.random()*10000);
         String iD=""+randomChar+randomNumbers;
         
-        if (iD.charAt(0))
+        
                 
         input.close();
     }
