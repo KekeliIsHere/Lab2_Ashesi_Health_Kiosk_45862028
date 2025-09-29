@@ -33,8 +33,8 @@ public class HealthKiosk{
                 desk="ERROR";
                 break; 
         }
+        System.out.println();
         //Task 2
-
         if(desk.equals("TRIAGE")){
             System.out.println("""
             Please enter a health metric:
@@ -95,9 +95,13 @@ public class HealthKiosk{
                     metric=0;
                     break;
             }
+            System.out.println();
         }else{
             metric=0;
+            System.out.println();
         }
+
+        
         //Task 3
         
         char randomChar = (char) ('A' + (int)(Math.random() * 26));
@@ -124,7 +128,7 @@ public class HealthKiosk{
             System.out.println("ID OK: " + iD);
         }
 
-
+        System.out.println();
         //Task 4
         System.out.println("Enter your first name:");
         String fName = input.next();
@@ -134,6 +138,8 @@ public class HealthKiosk{
         String lastTwoOfID = iD.substring(iD.length() - 2);
         
         String code=""+shiftedLetter+lastTwoOfID+"-"+metric;
+        System.out.println("Display code: "+code);
+        System.out.println();
         System.out.println("Summary: "+desk+" | ID="+iD+" |Code="+code);
         
 
