@@ -53,7 +53,7 @@ public class HealthKiosk{
                     System.out.println("Enter your height in meters:");
                     double heightM=input.nextDouble();
 
-                    double bmi=weightKG/heightM;
+                    double bmi=weightKG/(heightM*heightM);
                     double roundedBMI=Math.round(bmi*100)/100;
                     System.out.println("BMI: "+roundedBMI);
                     
@@ -114,18 +114,22 @@ public class HealthKiosk{
 
         String iD = "" + randomChar + d1 + d2 + d3 + d4;
 
-
-        if (iD.length() != 5) {
-            System.out.println("Invalid length");
-        } else if (!Character.isLetter(iD.charAt(0))) {
-            System.out.println("Invalid: first char must be a letter");
-        } else if (!(Character.isDigit(iD.charAt(1)) &&
+        if (iD.length() == 5) {
+            if (Character.isLetter(iD.charAt(0))) {
+                if (Character.isDigit(iD.charAt(1)) &&
                     Character.isDigit(iD.charAt(2)) &&
                     Character.isDigit(iD.charAt(3)) &&
-                    Character.isDigit(iD.charAt(4)))) {
-            System.out.println("Invalid: last 4 must be digits");
+                    Character.isDigit(iD.charAt(4))) {
+                    
+                    System.out.println("ID OK: " + iD);
+                } else {
+                    System.out.println("Invalid: last 4 must be digits");
+                }
+            } else {
+                System.out.println("Invalid: first char must be a letter");
+            }
         } else {
-            System.out.println("ID OK: " + iD);
+            System.out.println("Invalid length");
         }
 
         System.out.println();
