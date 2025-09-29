@@ -82,7 +82,12 @@ public class HealthKiosk{
                 System.out.println("Invalid Health Metric");
                 break;
         }
-        //Task 4     
+        //Task 3
+        char randomChar = (char) ('A' + Math.random() * 26);
+        int randomNumbers=(int) (Math.random()*10000);
+        String iD=""+randomChar+randomNumbers;
+        
+        if (iD.charAt(0))
                 
         input.close();
     }
